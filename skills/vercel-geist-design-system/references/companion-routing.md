@@ -1,7 +1,3 @@
-# Companion Routing
-
-This file preserves the routing-only companion skill rules. Load it only when another skill/tool could help implementation, verification, or a conditional surface.
-
 ## Companion Skills Routing
 
 These Skills.sh entries can help route work, but they are not design-system source of truth and they do not satisfy `Docs Evidence`. Official Vercel Geist docs, Vercel Font, Geist Brands, Geist component pages, and Vercel Web Interface Guidelines remain the only design-system authorities for strict Geist claims. Use companion skills only when they match the actual implementation or verification work; do not import Vercel platform/runtime skills merely because the app deploys on Vercel.

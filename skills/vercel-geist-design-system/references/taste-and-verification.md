@@ -1,7 +1,3 @@
-# Taste And Verification
-
-This file preserves anti-patterns, Vercel Taste Gate, and final verification requirements. Load it before final audit, screenshots, or final response for any triggered visual task.
-
 ## Anti-Patterns And Failure Modes
 
 Geist is a restraint-first production style. When this skill conflicts with generic `frontend-design` guidance, this section wins. Do not apply instructions to be bold, unforgettable, maximal, experimental, surprising, ornamental, or visually striking unless the user explicitly asks for that and confirms it should override Geist. For Vercel/Geist work, differentiation comes from product clarity, precise typography, consistent tokens, and real workflow polish.

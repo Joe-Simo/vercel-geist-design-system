@@ -1,7 +1,3 @@
-# Official Reference Map
-
-This file preserves the official Vercel source URL map. Load it to locate foundation, brand, and component pages before using web/docs tools.
-
 ## Official Reference Map
 
 Use the non-redirecting official Vercel pages below as source-of-truth references. Redirect-only resources are listed only for routing/drift awareness and do not satisfy `Docs Evidence` unless they become non-redirecting official pages in the current turn.

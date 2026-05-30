@@ -1,7 +1,3 @@
-# Component System
-
-This file preserves component mapping, component documentation, component rules, iconography, brand, motion, performance, copy, and Web Interface Guidelines overlay rules. Load it before implementing, restyling, or auditing concrete UI components.
-
 ## Geist Component Mapping
 
 Before custom-building UI, check whether Geist already has the pattern. If it does, use the Geist reference as the behavioral and visual target, then implement it with the project's available primitives.

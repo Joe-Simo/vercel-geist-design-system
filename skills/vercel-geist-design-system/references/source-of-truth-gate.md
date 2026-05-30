@@ -1,7 +1,3 @@
-# Source Of Truth Gate
-
-This file preserves the strict docs-first, fallback, and Docs Evidence rules from the original skill. Load it for every triggered visual task before claiming Geist alignment.
-
 ## Reference-First Contract
 
 The linked Geist docs are the design system. This skill is the enforcement layer that makes the agent use them.

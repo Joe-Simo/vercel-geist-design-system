@@ -1,7 +1,3 @@
-# Foundation And Style Rules
-
-This file preserves foundation, essence, layout, color, typography, setup, materials, implementation, and Tailwind guidance. Load it before creating or materially changing rendered UI.
-
 ## Foundation Gate
 
 For any task that creates or materially changes rendered UI, complete the Geist foundation layer before screen design or screen implementation. For tiny primitive-only fixes, verify the touched primitive still composes these foundations. Do not design or implement individual screens until these foundations are present, wired through the real app entrypoints, and used by shared primitives.
