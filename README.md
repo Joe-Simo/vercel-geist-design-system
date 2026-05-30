@@ -8,6 +8,17 @@ Community Agent Skills by `joe-simo`.
 
 `vercel-geist-design-system` is a community Agent Skill for designing and reviewing Vercel-inspired interfaces with the Geist design system. It helps agents apply Geist typography, spacing, colors, materials, component styling, app shells, interaction states, screenshot audits, and UI polish across React, Next.js, Tailwind, shadcn, Radix, and other frontend surfaces.
 
+The skill treats official Vercel sources as the design authority: Geist Font, Geist foundations, Geist component pages, Geist Brands, and the Vercel Web Interface Guidelines. Skills.sh companions are routing helpers only; they do not replace official Geist docs or prove Geist compliance by themselves.
+
+The current companion routing covers:
+
+- Core Geist and guideline helpers: `geist`, `geistdocs`, and `web-design-guidelines`
+- Implementation helpers: `building-components`, `shadcn`, React best practices, Next.js guidance, and Vercel composition patterns
+- Verification helpers: browser automation, browser verification, full-flow verification, and before/after visual comparison
+- Conditional surfaces: AI Elements, Streamdown, `json-render/react-three-fiber`, View Transitions, Geist learning labs, and Remotion Geist video work
+
+The skill intentionally avoids routing Vercel platform/runtime skills for visual design work unless the user explicitly asks for that product capability.
+
 This is community-authored by `joe-simo`. It is not an official Vercel skill.
 
 ## Install
@@ -35,15 +46,23 @@ Refactor these shadcn components so they follow Geist typography, spacing, mater
 Audit this landing page and app shell against Vercel Geist design-system expectations.
 ```
 
+```txt
+Create an AI chat surface that uses Vercel-style Geist UI, with AI Elements only as implementation infrastructure.
+```
+
+```txt
+Render a constrained React Three Fiber scene from json-render inside a Geist-styled product page.
+```
+
 ## Attribution
 
 GitHub: `joe-simo`
 
 X: `@joesimo`
 
-Website: https://joesimo.com
+Website: [joesimo.com](https://joesimo.com)
 
 ## Links
 
-- https://skills.sh/joe-simo/skills
-- https://skills.sh/joe-simo/skills/vercel-geist-design-system
+- [skills.sh/joe-simo/skills](https://skills.sh/joe-simo/skills)
+- [skills.sh/joe-simo/skills/vercel-geist-design-system](https://skills.sh/joe-simo/skills/vercel-geist-design-system)
