@@ -1,0 +1,41 @@
+# Source Of Truth Gate
+
+This file preserves the strict docs-first, fallback, and Docs Evidence rules from the original skill. Load it for every triggered visual task before claiming Geist alignment.
+
+## Reference-First Contract
+
+The linked Geist docs are the design system. This skill is the enforcement layer that makes the agent use them.
+
+- Do not rely only on this skill summary for design decisions when official docs are available.
+- Before implementing any UI that creates or materially changes rendered output, consult the official Vercel Font page plus Geist Introduction, Colors, Typography, Materials, and Guidelines pages.
+- Before implementing a specific UI pattern, consult the matching Geist component page from the reference map. A docs fallback is allowed only after attempting the required official URL in the current turn using every available browsing/docs tool.
+- If current docs remain unavailable after those attempts, state the attempted URLs, tools, and exact failure mode. During blocked-doc fallback, local rules in this skill are advisory only; they cannot satisfy `Docs Evidence`, cannot support strict/docs-verified claims, and cannot be enforced as source-of-truth visual rules. If a needed decision has no current official source trace, mark that decision blocked and do not enforce an invented local visual rule. Shell/package-manager network failure alone is not enough if web/browser access exists. Do not use the fallback merely because the reference map, memory, or existing class names seem sufficient. When any required official page could not be read, label the result as `local Geist fallback, not docs-verified`; do not claim strict Geist, official Geist compliance, source-of-truth alignment, or Vercel Taste Gate passage for affected surfaces unless all required docs, screenshot checks, and interaction checks were completed.
+- Do not treat using Geist fonts or class names as sufficient. The visual result must match the Geist/Vercel product language: restrained, precise, systematic, dense when useful, and visually coherent across every surface.
+- If a generated design looks only generically "SaaS" or "clean" but not recognizably Vercel/Geist, revise it before finishing.
+- The final UI should be judged as a product system, not a single screen: tokens, shell, navigation, controls, data displays, dialogs, feedback, and states must all belong together.
+
+## Required Workflow
+
+1. Identify the surface type: marketing hero, product dashboard, settings page, table/list view, command workflow, docs, or component library.
+2. Check the existing project first: framework, Tailwind version, component library, icon library, font setup, theme tokens, and existing design-system conventions.
+3. Open and read the required foundation pages for the surface, then complete the Foundation Gate before any screen-level work in this order: fonts, semantic color tokens, typography utilities, material/radius utilities, focus rings, shared app shell, component primitives, shared state system, and screen composition rules.
+4. Do not edit route/page/screen-level styles until those shared layers are present in real app entrypoints, theme files, primitives, and app shell components.
+5. Map every UI requirement to the closest Geist foundation or component, then open and read each matching official page before creating a custom pattern.
+6. Prefer established packages and project primitives over custom implementations. For complex accessible primitives, use headless Radix primitives or existing shadcn code only as behavior/accessibility infrastructure after the Geist mapping pass; never import shadcn/Radix visual defaults, themes, or variants as design authority.
+7. When implementing or composing any UI pattern, consult the matching official Geist page first. Use this skill's Official Reference Map only to locate the official URL, or as fallback after every available browsing/docs tool fails for the required official URLs in the current turn. In fallback mode, state that live docs were not checked, include exact failure modes, choose the closest official component conservatively, and treat local rules as advisory rather than enforceable source-of-truth requirements. When any required official page could not be read, label the result as `local Geist fallback, not docs-verified`; do not claim strict Geist, official Geist compliance, source-of-truth alignment, or Vercel Taste Gate passage for affected surfaces unless all required docs, screenshot checks, and interaction checks were completed.
+8. Follow the host project's language, framework, package-management, and validation conventions.
+
+## Official Source-Of-Truth Gate
+
+For any task using this skill, current official Vercel docs are binding design input, not optional inspiration. Before visual implementation, open the relevant official pages for foundations, components, brand assets, and guidelines. Do not rely on memory, screenshots, generic SaaS heuristics, or Tailwind class names when an official Geist page covers the decision.
+
+Required pages by decision type:
+
+- Foundations: `https://vercel.com/geist/introduction`, `https://vercel.com/geist/colors`, `https://vercel.com/geist/typography`, `https://vercel.com/geist/materials`, `https://vercel.com/font`
+- Guidelines: `https://vercel.com/design/guidelines`
+- Brand/logo/assets: `https://vercel.com/geist/brands`
+- Components: every concrete matching component URL from the reference map or live Geist component nav, such as `https://vercel.com/geist/button`
+
+If a listed page redirects or cannot be loaded, do not treat it as source of truth. Use the closest accessible official Vercel page only as supplemental context and state the fallback. The original required URL remains `blocked` unless that exact official page or anchor was read; a substitute page cannot satisfy source-of-truth verification for the blocked required page.
+
+For any task using this skill that creates, changes, critiques, specifies, or materially directs rendered UI, the final response must include a `Docs Evidence` table with one row for every required official page for the task, not merely pages claimed as consulted: all required foundation pages, the guidelines page, every mapped component page, and brand/assets pages when brand or logo decisions are made. Use columns: `official URL | status (consulted/blocked/not applicable) | exact official section/anchor | short exact quote or exact failure mode | implementation target | concrete decision/change | verification`. Keep any quote short, source-specific, and compliant with source quotation limits. Foundation and guidelines rows can be only `consulted` or `blocked`. Component rows split into required applied rows and adjacent rejected rows: rows for components actually implemented, restyled, or required by custom-pattern mapping can be only `consulted` or `blocked`; adjacent checked-and-rejected component rows can be `not applicable` only with a rejection reason and do not block strict claims by themselves. Brand/assets rows are required only when brand or logo decisions are made. A required applied page is blocked only if every available browsing/docs tool was tried in the current turn and the row names the tools and exact failures. A final answer may not claim Geist, strict Geist, docs-aligned Geist, source-of-truth verification, or Vercel Taste Gate passage if any required applied row is missing, blocked, lacks an exact section/anchor, or lacks a page-specific short quote that affected a concrete decision; if any required source is blocked, the only allowed claim for affected surfaces is `local Geist fallback, not docs-verified`. Strict Geist, docs-verified Geist, docs-aligned Geist, official Geist compliance, and source-of-truth alignment require complete `Docs Evidence` plus screenshot and interaction checks when those checks are possible. If screenshots or interaction checks are blocked, allowed wording is limited to `docs consulted; visual/interaction verification blocked`.
