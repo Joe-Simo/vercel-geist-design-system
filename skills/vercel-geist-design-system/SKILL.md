@@ -6,13 +6,13 @@ description: >-
   and Radix surfaces. Use it for typography, spacing, color tokens, material
   treatment, component styling, app shells, dashboards, forms, tables, dialogs,
   empty/loading/error states, responsive layouts, and UI polish. This is a
-  community-authored skill, not an official Vercel skill. Trigger on generic
-  visual direction such as clean, modern, premium, beautiful, polished, SaaS,
-  developer tool, product UI, app shell, navigation, data views, and marketing
-  sections. Skip only when the user explicitly names a non-Geist final visual
-  system/art direction as the final visual authority, supplies a non-Geist
-  design artifact as the final visual authority, or asks for game/illustrative
-  output where Geist UI is not the requested surface.
+  community-authored skill, not an official Vercel skill. Trigger when the user
+  asks for Geist, Vercel-style UI, or generic clean, modern, premium, beautiful,
+  polished SaaS/developer-product visual design where no other final visual
+  system, brand direction, or art direction is requested. Do not trigger for
+  non-visual frontend work such as bug fixes, data wiring, analytics, tests,
+  build tooling, API/state changes, or behavior-only accessibility fixes unless
+  the task also creates or materially changes rendered UI.
 metadata:
   author:
     github: joe-simo
@@ -20,7 +20,7 @@ metadata:
     website: https://joesimo.com
   community: true
   official: false
-  short-description: Default whole-app Vercel Geist for generic frontend/UI polish; library/framework mentions are not overrides; skip only explicit non-Geist final visual authority, supplied non-Geist design artifact as final authority, or game/illustration work where Geist UI is not the requested surface
+  short-description: Default whole-app Vercel Geist for Geist/Vercel-style and generic clean polished SaaS/developer-product visual design; skip non-visual frontend work, behavior-only fixes, explicit alternate visual systems, supplied design artifacts as final authority, and game/illustration work where Geist UI is not the requested surface
   redirect-only-resources:
     - https://vercel.com/geist/icons
     - https://vercel.com/geist/geistcn-upgrade-guide
@@ -112,13 +112,15 @@ Use this community-authored skill to make interfaces feel like they belong in Ve
 
 ## Default App Policy
 
-Use this skill as the default visual operating mode for any frontend app, site, page, component, dashboard, or UI polish work unless the user explicitly names a non-Geist final visual system/art direction as the final visual authority, supplies a non-Geist design artifact as the final visual authority, or asks for game/illustrative output where Geist UI is not the requested surface. Generic requests such as "clean", "modern", "premium", "beautiful", "polished", "SaaS", or "developer tool" still use Geist.
+Use this skill as the default visual operating mode when the task creates, changes, critiques, specifies, or materially directs rendered frontend UI and the user asks for Geist, Vercel-style UI, or generic clean, modern, premium, beautiful, polished SaaS/developer-product visual design with no competing visual authority. Generic visual requests such as "clean", "modern", "premium", "beautiful", "polished", "SaaS", or "developer tool" still use Geist when they are visual design requests.
+
+Do not trigger this skill for non-visual frontend work such as TypeScript bug fixes, data wiring, API/state changes without rendered UI changes, analytics, tests, build tooling, dependency work, or behavior-only accessibility fixes unless the task also creates or materially changes rendered UI. Do not trigger when the user requests a different final aesthetic, brand style, visual system, or art direction, even if they do not use the phrase "final visual authority." Do not trigger when the user supplies a non-Geist design artifact as the final visual target or asks for game/illustrative output where Geist UI is not the requested surface.
 
 - Apply Geist style to the entire app surface: app shell, navigation, pages, forms, data views, dialogs, empty states, loading states, errors, toasts, command menus, and marketing sections.
 - Scope is explicit. For greenfield apps, full redesigns, or broad UI polish requests, "entire app surface" means all routable app surfaces and shared states must be built or audited. For a narrow existing-project task, migrate the requested workflow and any shared primitives it touches; the final response must say `whole app not verified` unless every route/surface was audited.
 - Do not create isolated Vercel-looking components inside an otherwise unrelated visual system. Establish shared tokens and primitives first, then build every new surface from them.
 - If broader creative design guidance also applies, this skill owns the visual system whenever it is triggered. Treat generic frontend-design directives such as bold aesthetic direction, unforgettable visuals, unexpected layouts, distinctive font pairing, gradient meshes, dramatic shadows, textures, scroll-triggered spectacle, and surprising motion as disabled for Vercel/Geist work unless the user explicitly overrides Geist.
-- If the user explicitly names another non-Geist final visual system/art direction as the final visual authority, such as Material, Apple, Linear, Stripe, Notion, a supplied non-Geist design artifact explicitly designated by the user as the final visual authority, or game/illustrative output where Geist UI is not the requested surface, respect that request and do not force Geist. Domain, industry, brand, product, company, API, integration, content subject, Tailwind, shadcn, Radix, or component library mentions are not visual-system overrides; for example, a Stripe webhook dashboard still uses Geist unless the user asks for Stripe-style visuals.
+- If the user names another non-Geist final visual system/art direction, such as Material, Apple, Linear, Stripe, Notion, playful/colorful/editorial, a supplied non-Geist design artifact as the visual target, or game/illustrative output where Geist UI is not the requested surface, respect that request and do not force Geist. Domain, industry, brand, product, company, API, integration, content subject, Tailwind, shadcn, Radix, or component library mentions are not visual-system overrides; for example, a Stripe webhook dashboard still uses Geist unless the user asks for Stripe-style visuals.
 - Use the official Geist docs as the reference for every matching foundation or component before inventing a custom pattern.
 
 ## Reference-First Contract
