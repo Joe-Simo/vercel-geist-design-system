@@ -31,14 +31,14 @@ All components must have:
 - Default, hover, active/pressed, focus-visible, disabled, loading, and error states when relevant.
 - Keyboard accessibility for all interactive controls.
 - ARIA only when it improves semantic clarity; do not add redundant ARIA to native elements.
-- Use native semantics first: button for actions, a/Link for navigation, label for controls, table for tabular data. Do not substitute div/button for navigational links. App shells need a skip-to-content link, valid heading hierarchy, and a context-specific `<title>`. Name icon-only controls, provide accurate accessible names, give images meaningful `alt`, set decorative images to `alt=""`, set `aria-hidden="true"` on decorative SVG/icons/media, announce async updates with polite aria-live where appropriate, and verify names/states in the accessibility tree.
+- Use native semantics first: button for actions, a/Link for navigation, label for controls, table for tabular data. Do not substitute div/button for navigational links. Preserve existing link semantics and destinations unless the user asks to change them or there is a concrete correctness/security/accessibility issue. Do not redirect an internal blog, docs, certification, contact, or product route to an external social/profile destination just to avoid an empty state; build the honest same-site route or preserve the existing href. App shells need a skip-to-content link, valid heading hierarchy, and a context-specific `<title>`. Name icon-only controls, provide accurate accessible names, give images meaningful `alt`, set decorative images to `alt=""`, set `aria-hidden="true"` on decorative SVG/icons/media, announce async updates with polite aria-live where appropriate, and verify names/states in the accessibility tree.
 - Visible focus rings that match the system and meet contrast needs. Use `:focus-visible` for focus rings and `:focus-within` for grouped/composite controls. On desktop screens with a single primary input, autofocus that input. Avoid mobile autofocus unless explicitly justified.
 - Stable sizing across content, loading, and state changes.
 - Icon alignment that does not distort row height or button height.
 
 Component direction:
 
-- Buttons: clear hierarchy. One primary action per surface. Secondary and tertiary actions should stay quiet. Destructive actions require confirmation or Undo with a safe window; irreversible destructive actions require confirmation.
+- Buttons: clear hierarchy. One primary action per surface. Secondary and tertiary actions should stay quiet. Do not create new primary actions merely because a surface is sparse or because Geist guidance favors a clear next step; reuse existing product actions and preserve CTA count/intent unless the user requests a behavior change. Destructive actions require confirmation or Undo with a safe window; irreversible destructive actions require confirmation.
 - Inputs/Textareas: restrained borders, visible focus state, inline validation, associated labels, mobile input font-size >=16px, browser zoom left enabled, hydration-safe value/focus, paste allowed, no blocked typing, correct type/inputmode/name/autocomplete, selective spellcheck, explicit native select colors for Windows dark mode, and no oversized fields unless the task requires it.
 - Forms: Enter submits when a text input is the only control or the last relevant control in a multi-control form; in `<textarea>`, Cmd/Ctrl+Enter submits and Enter inserts a newline. Every control has an associated label, clicking a label activates the control, submit remains enabled until submission starts, in-flight submission disables the submit control, shows progress, and uses an idempotency key when a mutation can repeat. Do not pre-disable submit to hide validation; submit incomplete forms to reveal validation, show errors next to fields, focus the first error on submit, warn before navigation when unsaved data could be lost, and preserve password-manager, autofill, OTP, paste, and text-replacement compatibility. Placeholders should signal emptiness with an ellipsis and use example values or patterns. Avoid password-manager triggers on non-auth fields with appropriate `name` and `autocomplete` values. Trim text-replacement trailing whitespace before validation errors are shown.
 - Select/Combobox/Menus: keyboard-navigable, typeahead/search when data volume needs it, concise option labels.
@@ -50,6 +50,21 @@ Component direction:
 - Empty States: direct next action, no oversized illustration unless the product context needs it.
 - Scroller: use for overflowing peer items on one axis; pick `vertical`, `horizontal`, or `free` based on real content. Use virtualization or `content-visibility` for large lists when the Web Interface Guidelines audit/prompt flags the list size or when profiling shows rendering cost; otherwise document the performance justification. Keep horizontal widths/gaps consistent, expose edge affordances, and give scroll buttons specific `aria-label`s such as `Scroll customer logos left`.
 - Skeletons/Spinners/Loading Dots: use only while real data or work is pending; preserve final layout dimensions. Loading buttons keep the original label visible with a progress indicator. Local heuristic, not `Docs Evidence`: spinner/skeleton UI should avoid flicker with a short show delay and minimum visible duration unless the consulted component or project primitive defines exact timing.
+
+## Certifications And Trust Credentials
+
+Certification, accreditation, compliance, partner, and issuer information is
+content, not decoration. Preserve existing credential names, issuers, status,
+dates, source links, and same-site destinations unless the user explicitly asks
+to remove them or they disclose sensitive/private information.
+
+Prefer verified official credential badge/certificate-mark images when they are
+available. Issuer or company logos may supplement a credential only as secondary
+context and must never masquerade as the certification badge. Do not generate
+text monograms, invented seals, inferred logos, or company-logo-only cards as a
+replacement for official credential imagery. If an official image is missing,
+show an honest unavailable state or keep the existing content rather than
+fabricating a badge.
 
 ## Iconography
 

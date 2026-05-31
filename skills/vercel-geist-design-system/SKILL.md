@@ -77,6 +77,25 @@ When triggered, Geist owns the visual system. Ignore generic frontend-design
 pushes toward bold, unforgettable, maximal, ornamental, or surprising visuals
 unless the user explicitly overrides Geist.
 
+## Content, IA, And Brand Preservation Gate
+
+When applying Geist to an existing site, app, dashboard, docs surface, or
+product, preserve user-approved content, brand-defining visual moments,
+information architecture, route destinations, and external/internal link intent
+unless the user explicitly asks to change them or they create a concrete
+accessibility, performance, security, correctness, or legal/trademark problem.
+
+Restyle before replacing. If an existing hero effect, animation, certification
+display, blog link, footer, contact path, navigation pattern, or route appears
+intentional, adapt it to Geist constraints instead of deleting, hiding,
+redirecting, duplicating, or inventing alternatives. If intent is unclear,
+report the tradeoff and keep the existing behavior.
+
+Do not invent new CTAs, contact details, destinations, routes, issuer logos,
+certification labels, or navigation/footer sections solely to satisfy Geist,
+no-dead-end, app-shell, or primary-action guidance. Use existing product
+actions, existing routes, and existing content first.
+
 ## Operating Loop
 
 1. Identify the UI surface and scope: greenfield app, full redesign, narrow

@@ -7,7 +7,7 @@ This section separates official-source checks from local Vercel/Geist taste heur
 Reject or revise these failure modes before finishing:
 
 - Local heuristic: generic AI SaaS visual language such as giant "accelerate/build/automate" heroes, gradient headlines, glowing blobs/orbs, glass panels, noise overlays, floating feature pills, and fake customer/logo bands.
-- Local heuristic: decorative gradients, purple-blue sweeps, rainbow meshes, radial glow backgrounds, bokeh, aurora effects, spotlight blobs, or background effects that are not required by product meaning. Official check: any retained color/motion/material treatment must be justified by Colors, Materials, Animations, or Content evidence.
+- Local heuristic: decorative gradients, purple-blue sweeps, rainbow meshes, radial glow backgrounds, bokeh, aurora effects, spotlight blobs, or background effects that are not required by product meaning. Preserve user-approved, brand-defining effects and restyle their boundaries, contrast, performance, or reduced-motion behavior before deleting them. Official check: any retained color/motion/material treatment must be justified by Colors, Materials, Animations, or Content evidence.
 - Official-source check: arbitrary accent colors, multi-hue dashboards, invented dark-mode palettes, or colors chosen for mood rather than official color roles and semantic product meaning violate the consulted Colors evidence.
 - Local restraint, not `Docs Evidence`: non-Geist typography such as expressive display fonts, font pairing experiments, Inter/Roboto/Space Grotesk swaps, global system-font fallbacks used as a design choice, or Geist Pixel outside a constrained display accent.
 - Official-source check: reject radii that violate the consulted Materials or component page. Component-specific rounded/pill variants are allowed only when the relevant official component page documents them and the usage matches that context.
@@ -23,7 +23,7 @@ Reject or revise these failure modes before finishing:
 
 Failure handling:
 
-- If a design starts to look like a generic AI startup template, stop and simplify: remove decorative background effects, collapse competing CTAs, reduce color to neutral plus semantic status, and put the real workflow in the first viewport.
+- If a design starts to look like a generic AI startup template, stop and simplify: remove decorative background effects that are not user-approved brand moments, collapse competing CTAs without inventing replacement actions, reduce color to neutral plus semantic status, and put the real workflow in the first viewport.
 - If the result depends on fake data to look complete, do not ship it. Wire real data, show an honest empty state, or ask the user for real content.
 - If the existing project has a different visual system and the user has not made it the final visual authority, migrate or adapt the whole touched app or requested surface to Geist through shared tokens and primitives. State a blocker only when an explicit non-Geist authority or hard scope constraint makes coherent whole-surface Geist migration impossible.
 - If the user asks for "more creative" without explicitly overriding Geist, increase polish through alignment, density, copy, state coverage, and interaction clarity, not through gradients, ornamental assets, or random colors.
@@ -52,6 +52,7 @@ Pass criteria:
 - Web Interface Guidelines evidence is complete: interaction applicability matrix has pass/fail/N/A plus reasons, and failures were revised or explicitly blocked.
 - Screenshots show the real product/workflow in the first viewport for every verified route/surface, not a generic landing page unless the user explicitly requested marketing.
 - Screenshots and code show one coherent system: shared tokens/classes/materials/primitives are reused, and there are no isolated Geist-looking components inside unrelated styling.
+- Existing content, IA, routes, CTAs, brand-defining effects, credential semantics, contact ownership, and footer/navigation ownership were preserved unless the final report names a user request or concrete issue that required changing them.
 - Typography uses the mapped Geist categories/utilities and does not rely on giant generic headlines, all-bold headings, or default `text-base` everywhere.
 - Color uses official roles or mapped project tokens; accents appear only for brand, links, selection, status, or focus.
 - Materials and radii follow consulted Materials/component evidence; depth is structural and does not rely on loud shadows, glass panels, or decorative background effects.
@@ -79,6 +80,7 @@ Failure response:
 Before finishing any task using this skill that creates, changes, critiques, specifies, or materially directs rendered UI, verify:
 
 - The first viewport shows the real product/workflow, not a generic landing page unless explicitly requested.
+- Existing approved behavior was preserved: hero/brand effects, CTA count and intent, route destinations, same-site blog/docs/certification links, contact section ownership, and footer/navigation ownership were not removed, duplicated, or redirected without an explicit user request or concrete accessibility/performance/security/correctness reason.
 - Verification scope is explicit: greenfield/full redesign/broad polish covers all routable app surfaces; narrow existing-project work covers the requested workflow and touched shared primitives, and the final response says `whole app not verified` unless every route/surface was audited.
 - The Geist foundation gate was completed before screen design: fonts, tokens, typography utilities, material/radius utilities, focus rings, app shell, required component primitives, shared state system, and screen composition rules are wired through real app entrypoints, theme/Tailwind/CSS files, shared primitives, and app shell, and consumed by changed screens.
 - Screen-level styles compose shared Geist foundations, primitives, and state APIs/classes; they do not introduce one-off colors, font stacks, radii, focus rings, shadows, state styles, or component behavior.

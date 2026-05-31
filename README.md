@@ -10,6 +10,8 @@ Community Agent Skills by `joe-simo`.
 
 The skill treats official Vercel sources as the design authority: Geist Font, Geist foundations, Geist component pages, Geist Brands, and the Vercel Web Interface Guidelines. Skills.sh companions are routing helpers only; they do not replace official Geist docs or prove Geist compliance by themselves.
 
+For existing products, the skill now includes a preservation gate: agents should restyle intentional content, routes, CTAs, brand-defining effects, credential displays, navigation, contact paths, and footer ownership before replacing or inventing alternatives. This is public guidance for any project using the skill, not a project-specific rule.
+
 The main `SKILL.md` stays compact for lower initial context use. Detailed source gates, component mappings, style rules, companion routing, and verification checks live in `skills/vercel-geist-design-system/references/` and are loaded only when relevant.
 
 The current companion routing covers:

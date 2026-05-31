@@ -29,6 +29,7 @@ The target feel is a restrained developer-tool interface:
 
 - Product apps should open directly into the usable workspace, not a marketing landing page.
 - Dashboards should favor a clear primary workflow, quiet secondary controls, and compact information density.
+- Existing app shells should keep one canonical navigation/footer/contact model. If a sticky or primary navigation already owns section links, do not duplicate the same link set in the footer. If a contact section already owns contact actions, do not repeat the same contact/social list in the footer unless the user explicitly asks for redundant footer navigation.
 - Use full-width page bands or unframed layouts for sections. Do not put page sections inside decorative cards.
 - Cards are for repeated items, modals, individual panels, and genuine framed tools. Do not nest cards inside cards.
 - Use a predictable grid and stable dimensions for toolbars, boards, tables, counters, and repeated tiles.
