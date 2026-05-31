@@ -58,13 +58,16 @@ content, not decoration. Preserve existing credential names, issuers, status,
 dates, source links, and same-site destinations unless the user explicitly asks
 to remove them or they disclose sensitive/private information.
 
-Prefer verified official credential badge/certificate-mark images when they are
-available. Issuer or company logos may supplement a credential only as secondary
-context and must never masquerade as the certification badge. Do not generate
-text monograms, invented seals, inferred logos, or company-logo-only cards as a
-replacement for official credential imagery. If an official image is missing,
-show an honest unavailable state or keep the existing content rather than
-fabricating a badge.
+When asked for certification logos, badges, or marks, use only
+certification-specific official logo/badge artwork from the certification or
+credential source. Certificate scans, generic certificate seals/marks,
+course-completion certificates, issuer/company logos, inferred logos, text
+monograms, text-only cards, and invented badge artwork are not substitutes for
+the certification badge. Issuer or company logos may supplement a credential
+only as secondary context and must never masquerade as certification-specific
+artwork. If certification-specific official artwork is missing, show an honest
+unavailable state or keep the existing content rather than fabricating or
+substituting a badge.
 
 ## Iconography
 
