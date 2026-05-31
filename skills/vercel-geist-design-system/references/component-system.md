@@ -58,14 +58,15 @@ content, not decoration. Preserve existing credential names, issuers, status,
 dates, source links, and same-site destinations unless the user explicitly asks
 to remove them or they disclose sensitive/private information.
 
-When asked for certification logos, badges, or marks, use only
-certification-specific official logo/badge artwork from the certification or
-credential source. Certificate scans, generic certificate seals/marks,
-course-completion certificates, issuer/company logos, inferred logos, text
-monograms, text-only cards, and invented badge artwork are not substitutes for
-the certification badge. Issuer or company logos may supplement a credential
-only as secondary context and must never masquerade as certification-specific
-artwork. If certification-specific official artwork is missing, show an honest
+When asked for certification logos, badges, marks, or credential artwork, use
+only certification-specific official logo/badge artwork from the certification
+or credential source. Generic certificate images, certificate scans, generic
+certificate seals/marks, course-completion certificates/marks, issuer/company
+logos, inferred logos, text labels, text monograms, text-only cards, Geist
+Badge/Pill UI badges, and invented badge artwork are not substitutes for the
+certification badge. Issuer or company logos may supplement a credential only as
+secondary context and must never masquerade as certification-specific artwork.
+If certification-specific official artwork is missing, show an honest
 unavailable state or keep the existing content rather than fabricating or
 substituting a badge.
 

@@ -47,9 +47,10 @@ reference because this summary seems sufficient.
   redesigning, reviewing, or materially changing rendered UI.
 - Load `references/official-reference-map.md` when mapping foundations,
   brand/assets, or components to official Vercel URLs.
-- Load `references/component-system.md` before components/primitives/states,
-  custom compositions, UI copy, performance-relevant UI, icon/brand, motion, or
-  Web Interface Guidelines overlay work.
+- Load `references/component-system.md` before certification/trust credential
+  displays, components/primitives/states, custom compositions, UI copy,
+  performance-relevant UI, icon/brand, motion, or Web Interface Guidelines
+  overlay work.
 - Load `references/companion-routing.md` only when another Skills.sh entry,
   framework helper, verification helper, tool, or conditional surface could be
   relevant.
@@ -95,6 +96,11 @@ Do not invent new CTAs, contact details, destinations, routes, issuer logos,
 certification labels, or navigation/footer sections solely to satisfy Geist,
 no-dead-end, app-shell, or primary-action guidance. Use existing product
 actions, existing routes, and existing content first.
+
+For certification displays, preserve certification-specific official badge/logo
+artwork when present. Do not replace it with generic certificate imagery,
+certificate seals, course-completion marks, issuer/company logos, text labels,
+text monograms, or Geist Badge/Pill UI treatments.
 
 ## Operating Loop
 

@@ -30,6 +30,9 @@ Required pages by decision type:
 - Guidelines: `https://vercel.com/design/guidelines`
 - Brand/logo/assets: `https://vercel.com/geist/brands`
 - Components: every concrete matching component URL from the reference map or live Geist component nav, such as `https://vercel.com/geist/button`
+- Credential/certification artwork: the official certification or credential
+  issuer/source for that exact credential; generic image search, issuer logos,
+  course certificates, and UI badge components are not source-of-truth artwork.
 
 If a listed page redirects or cannot be loaded, do not treat it as source of truth. Use the closest accessible official Vercel page only as supplemental context and state the fallback. The original required URL remains `blocked` unless that exact official page or anchor was read; a substitute page cannot satisfy source-of-truth verification for the blocked required page.
 

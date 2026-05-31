@@ -52,7 +52,7 @@ Pass criteria:
 - Web Interface Guidelines evidence is complete: interaction applicability matrix has pass/fail/N/A plus reasons, and failures were revised or explicitly blocked.
 - Screenshots show the real product/workflow in the first viewport for every verified route/surface, not a generic landing page unless the user explicitly requested marketing.
 - Screenshots and code show one coherent system: shared tokens/classes/materials/primitives are reused, and there are no isolated Geist-looking components inside unrelated styling.
-- Existing content, IA, routes, CTAs, brand-defining effects, credential semantics, contact ownership, and footer/navigation ownership were preserved unless the final report names a user request or concrete issue that required changing them.
+- Existing content, IA, routes, CTAs, brand-defining effects, credential semantics, credential-specific artwork and asset provenance, contact ownership, and footer/navigation ownership were preserved unless the final report names a user request or concrete issue that required changing them.
 - Typography uses the mapped Geist categories/utilities and does not rely on giant generic headlines, all-bold headings, or default `text-base` everywhere.
 - Color uses official roles or mapped project tokens; accents appear only for brand, links, selection, status, or focus.
 - Materials and radii follow consulted Materials/component evidence; depth is structural and does not rely on loud shadows, glass panels, or decorative background effects.
@@ -80,7 +80,7 @@ Failure response:
 Before finishing any task using this skill that creates, changes, critiques, specifies, or materially directs rendered UI, verify:
 
 - The first viewport shows the real product/workflow, not a generic landing page unless explicitly requested.
-- Existing approved behavior was preserved: hero/brand effects, CTA count and intent, route destinations, same-site blog/docs/certification links, contact section ownership, and footer/navigation ownership were not removed, duplicated, or redirected without an explicit user request or concrete accessibility/performance/security/correctness reason.
+- Existing approved behavior was preserved: hero/brand effects, CTA count and intent, route destinations, same-site blog/docs/certification links, credential-specific artwork and asset provenance, contact section ownership, and footer/navigation ownership were not removed, duplicated, or redirected without an explicit user request or concrete accessibility/performance/security/correctness reason.
 - Verification scope is explicit: greenfield/full redesign/broad polish covers all routable app surfaces; narrow existing-project work covers the requested workflow and touched shared primitives, and the final response says `whole app not verified` unless every route/surface was audited.
 - The Geist foundation gate was completed before screen design: fonts, tokens, typography utilities, material/radius utilities, focus rings, app shell, required component primitives, shared state system, and screen composition rules are wired through real app entrypoints, theme/Tailwind/CSS files, shared primitives, and app shell, and consumed by changed screens.
 - Screen-level styles compose shared Geist foundations, primitives, and state APIs/classes; they do not introduce one-off colors, font stacks, radii, focus rings, shadows, state styles, or component behavior.
