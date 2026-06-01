@@ -163,6 +163,16 @@ state-driven. Typography and spacing should carry hierarchy; color should be
 functional; borders should structure the UI; motion should be subtle and tied
 to state.
 
+Use functional CSS grid/flex layout by default. Do not add visible guide-line
+grids, graph-paper backgrounds, repeating-linear-gradient grid textures,
+blueprint/canvas backgrounds, or decorative grid overlays just because Vercel
+uses a Grid component or because a page is described as Vercel-style. Visible
+Geist Grid guide lines are opt-in: use them only when the user explicitly asks
+for visible grid guides/cells, when implementing a supplied design that clearly
+contains them, or when the specific official Grid component is the intended UI
+surface. Otherwise, align content to an invisible layout grid and express
+structure with spacing, columns, rows, borders, and real cells.
+
 Skills.sh companions are routing helpers only. They never replace official
 Geist docs, never define Geist visuals, and never satisfy `Docs Evidence`.
 

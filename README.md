@@ -12,6 +12,8 @@ The skill treats official Vercel sources as the design authority: Geist Font, Ge
 
 For existing products, the skill now includes a preservation gate: agents should restyle intentional content, routes, CTAs, brand-defining effects, credential displays, navigation, contact paths, and footer ownership before replacing or inventing alternatives. This is public guidance for any project using the skill, not a project-specific rule.
 
+For Vercel-style grids, the skill now makes a stricter distinction between functional layout and decorative guide art. Agents should use CSS grid/flex, columns, rows, cells, spacing, and borders by default. Visible guide-line grids, graph-paper backgrounds, repeating-gradient grid textures, and blueprint/canvas-style overlays are opt-in only when the user explicitly asks for visible grid guides/cells, supplies a design that clearly contains them, or intends to use the official Geist Grid component as the UI surface.
+
 The main `SKILL.md` stays compact for lower initial context use. Detailed source gates, component mappings, style rules, companion routing, and verification checks live in `skills/vercel-geist-design-system/references/` and are loaded only when relevant.
 
 The current companion routing covers:
