@@ -3,8 +3,8 @@
   "groupings": [
     {
       "title": "Design Systems",
-      "description": "Community skills for Geist-style interface design, scoped Vercel/Grid-style UI surfaces, UI review, and design-system consistency.",
-      "skills": ["vercel-geist-design-system"]
+      "description": "Community skills for official-source-guided Apple HIG and Geist-style interface design, UI review, and design-system consistency.",
+      "skills": ["apple-design-system", "vercel-geist-design-system"]
     },
     {
       "title": "Experiential Web Design",

@@ -4,6 +4,18 @@
 
 Community Agent Skills by `joe-simo`.
 
+## Apple Design System
+
+`apple-design-system` is a community Agent Skill for designing, redesigning, reviewing, and polishing Apple-style interfaces using official Apple Human Interface Guidelines and Apple Developer design resources only. It helps agents apply platform-native typography, semantic colors, layout, materials, Liquid Glass, SF Symbols, app icons, navigation, controls, component behavior, accessibility, motion, platform adaptation, responsive behavior, asset/licensing boundaries, screenshots, and UI polish across iOS, iPadOS, macOS, watchOS, tvOS, visionOS, SwiftUI/UIKit/AppKit-style UI, and Cupertino-style web UI.
+
+The skill treats official Apple Developer sources as the design authority: Human Interface Guidelines, Typography, Color, Layout, Materials, SF Symbols, App Icons, Motion, Writing, Accessibility, platform HIG pages, Apple Design Resources, Apple Fonts, and Apple developer terms. It does not use third-party summaries, UI kits, templates, copied Apple screenshots, extracted private assets, or unofficial HIG mirrors as design authority.
+
+The skill includes the same kind of enforcement structure as the Geist skill: a source-of-truth gate, official reference map, foundation gate, platform/pattern map, component documentation contract, component/interaction coverage map, asset/licensing gate, privacy/data-use gate, Apple interface craft checks, accessibility verification, and an Apple Taste Gate for screenshots, interaction checks, and final evidence.
+
+The main `SKILL.md` stays compact for lower initial context use. Detailed source gates, foundations, platform mapping, component rules, interaction coverage, interface craft, asset/licensing checks, privacy/data-use checks, accessibility, and verification checks live in `skills/apple-design-system/references/` and are loaded only when relevant.
+
+This is community-authored by `joe-simo`. It is not an official Apple skill and is not permission to copy Apple apps, Apple marketing, Apple icons, Apple trademarks, or private system UI.
+
 ## Awwwards-Style Web Design
 
 `awwwards-style-web-design` is a community Agent Skill for designing and reviewing original Awwwards-style, award-caliber experiential websites. It helps agents create high-craft portfolios, agency sites, editorial microsites, campaign pages, product launches, cinematic landing pages, scroll narratives, WebGL/Three.js/R3F scenes, GSAP/Motion-style interactions, tactile transitions, typography, composition, art direction, audio/video/media, responsive layouts, accessibility, performance, and UI polish.
@@ -47,6 +59,7 @@ This is community-authored by `joe-simo`. It is not an official Vercel skill.
 
 ```bash
 npx skills add joe-simo/skills
+npx skills add joe-simo/skills --skill apple-design-system
 npx skills add joe-simo/skills --skill awwwards-style-web-design
 npx skills add joe-simo/skills --skill vercel-geist-design-system
 ```
@@ -55,6 +68,26 @@ npx skills add joe-simo/skills --skill vercel-geist-design-system
 
 ```txt
 Design an original award-caliber portfolio site with strong art direction, motion, and responsive craft.
+```
+
+```txt
+Design this iOS app flow using official Apple Human Interface Guidelines.
+```
+
+```txt
+Review this macOS settings window against Apple HIG typography, layout, materials, controls, and accessibility.
+```
+
+```txt
+Make this SwiftUI interface feel native to Apple platforms without copying Apple apps.
+```
+
+```txt
+Design a visionOS settings flow with spatial comfort, indirect input, materials, and accessibility verified against official Apple pages.
+```
+
+```txt
+Create an Apple-style web translation of this dashboard without using Apple-owned assets or claiming native HIG compliance.
 ```
 
 ```txt
@@ -104,5 +137,6 @@ Website: [joesimo.com](https://joesimo.com)
 ## Links
 
 - [skills.sh/joe-simo/skills](https://skills.sh/joe-simo/skills)
+- [skills.sh/joe-simo/skills/apple-design-system](https://skills.sh/joe-simo/skills/apple-design-system)
 - [skills.sh/joe-simo/skills/awwwards-style-web-design](https://skills.sh/joe-simo/skills/awwwards-style-web-design)
 - [skills.sh/joe-simo/skills/vercel-geist-design-system](https://skills.sh/joe-simo/skills/vercel-geist-design-system)
