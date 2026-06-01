@@ -107,22 +107,30 @@ text monograms, or Geist Badge/Pill UI treatments.
 1. Identify the UI surface and scope: greenfield app, full redesign, narrow
    workflow, marketing page, dashboard, settings, table/list, command workflow,
    docs, or component library.
-2. Inspect the project before designing: framework, Tailwind version, component
+2. Select the matching Vercel/Geist reference archetype before designing. Do
+   not treat the Vercel homepage as the default target for every Vercel-style
+   request. For generic Vercel-style or Geist requests, use the official Geist
+   docs plus 1-3 current Vercel surfaces that match the requested surface type
+   when those pages are available. Use the homepage mainly for homepage, hero,
+   launch, or broad marketing composition. For dashboards, docs, settings,
+   forms, tables, pricing, portfolios, app shells, and component libraries,
+   inspect comparable Vercel/Geist surfaces and components instead.
+3. Inspect the project before designing: framework, Tailwind version, component
    library, icon library, font setup, theme tokens, existing primitives, routing,
    package manager, and validation commands.
-3. Load the required references above.
-4. Open current official Vercel pages for every required foundation, guideline,
+4. Load the required references above.
+5. Open current official Vercel pages for every required foundation, guideline,
    brand/assets, and mapped component before implementation or strict claims.
-5. Complete the Foundation Gate before screen work: fonts, semantic color
+6. Complete the Foundation Gate before screen work: fonts, semantic color
    tokens, typography utilities, material/radius utilities, focus rings, app
    shell, primitives, shared states, and screen composition rules.
-6. Map every UI requirement to an official Geist foundation/component,
+7. Map every UI requirement to an official Geist foundation/component,
    official composition, or constrained custom composition before inventing
    patterns.
-7. Implement through shared tokens and primitives. Use Radix/shadcn only as
+8. Implement through shared tokens and primitives. Use Radix/shadcn only as
    behavior/accessibility infrastructure after Geist mapping; their visual
    defaults are not design authority.
-8. Verify with the Taste Gate, revise failures, then report evidence and
+9. Verify with the Taste Gate, revise failures, then report evidence and
    blockers honestly.
 
 ## Non-Negotiables
@@ -164,14 +172,17 @@ functional; borders should structure the UI; motion should be subtle and tied
 to state.
 
 Use functional CSS grid/flex layout as the baseline for ordinary columns,
-lists, cards, and app shells. If the user asks for a Vercel.com-like grid,
-visible grid art, guide lines, cells, a full-page Grid treatment, or supplies a
-design that clearly contains those elements, treat that as permission to build
-an intentional Geist/Grid-style cell-and-guide surface. The visible grid must
-carry real content with aligned cells, borders, row/column math, clipping/solid
-cells where useful, and responsive behavior. Do not add accidental graph-paper,
-blueprint, or repeating-gradient decoration behind unrelated UI when the user
-only asked for a clean or ordinary responsive layout.
+lists, cards, and app shells. A Vercel.com-like reference can mix hero-only
+visible guide art with ordinary bordered content grids; do not infer a
+page-wide repeating-gradient background from the words grid layout, grid
+design, or Vercel-style grid. Add visible guide-line/grid-art backgrounds only
+to the exact surface the user, reference, or supplied design clearly shows as
+visible grid art. For the rest of the page, use solid backgrounds, functional
+CSS grid/flex, borders, dividers, spacing, and aligned cells. Build a full-page
+visible Geist/Grid cell-and-guide treatment only when the user explicitly asks
+for full-page visible grid art or the supplied design clearly shows visible
+guides across the whole page. Do not add accidental graph-paper, blueprint, or
+repeating-gradient decoration behind unrelated UI.
 
 Skills.sh companions are routing helpers only. They never replace official
 Geist docs, never define Geist visuals, and never satisfy `Docs Evidence`.
