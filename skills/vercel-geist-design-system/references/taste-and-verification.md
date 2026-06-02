@@ -8,17 +8,15 @@ Reject or revise these failure modes before finishing:
 
 - Local heuristic: generic AI SaaS visual language such as giant "accelerate/build/automate" heroes, gradient headlines, glowing blobs/orbs, glass panels, noise overlays, floating feature pills, and fake customer/logo bands.
 - Local heuristic: decorative gradients, purple-blue sweeps, rainbow meshes, radial glow backgrounds, bokeh, aurora effects, spotlight blobs, or background effects that are not required by product meaning. Preserve user-approved, brand-defining effects and restyle their boundaries, contrast, performance, or reduced-motion behavior before deleting them. Official check: any retained color/motion/material treatment must be justified by Colors, Materials, Animations, or Content evidence.
-- Local heuristic: visible guide-line grids and cell guides are not failures
-  when the user asks for Vercel.com-like grid art, visible guides, cells, a
-  full-page Grid treatment, a supplied design clearly contains them, or the
-  official Grid component is the intended UI surface. In those cases, identify
-  the exact visible-grid surface first. A hero may have guide art while the
-  rest of the page remains a solid bordered content grid. Evaluate whether the
+- Local heuristic: visible guide-line grids, cell guides, grid-art
+  backgrounds, graph-paper lines, blueprint lines, and repeating-gradient grid
+  backgrounds are failures by default. They are allowed only when the user
+  explicitly asks for visible grid art/backgrounds/cell guides, a user-supplied
+  design clearly contains them, or the requested UI surface is the official
+  Geist Grid component. In those cases, identify the exact visible-grid surface
+  first, keep the rest of the page on solid Geist backgrounds, and verify the
   lines are intentional content surfaces with aligned cells, borders,
   clipping/solid cells where useful, and responsive row/column behavior.
-  Graph-paper, blueprint, or repeating-gradient decoration remains a failure
-  when it spreads behind unrelated UI or appears outside the requested/shown
-  visible-grid surface.
 - Official-source check: arbitrary accent colors, multi-hue dashboards, invented dark-mode palettes, or colors chosen for mood rather than official color roles and semantic product meaning violate the consulted Colors evidence.
 - Local restraint, not `Docs Evidence`: non-Geist typography such as expressive display fonts, font pairing experiments, Inter/Roboto/Space Grotesk swaps, global system-font fallbacks used as a design choice, or Geist Pixel outside a constrained display accent.
 - Official-source check: reject radii that violate the consulted Materials or component page. Component-specific rounded/pill variants are allowed only when the relevant official component page documents them and the usage matches that context.
@@ -28,13 +26,13 @@ Reject or revise these failure modes before finishing:
 - Official-source check: animation must clarify cause/effect or add deliberate delight, respect reduced motion, avoid `transition: all`, stay interruptible/input-driven, and use CSS/compositor-friendly properties when possible. Local heuristic: avoid scroll reveals, parallax, bounce, animated gradients, cursor effects, celebratory effects, or hover surprises in ordinary product surfaces unless the user explicitly asks and official motion checks still pass.
 - Local heuristic: layout spectacle such as asymmetry, overlap, diagonals, broken grids, oversized negative space, or edge-to-edge compositions that reduce scan speed in product UI.
 - Local heuristic: confusing "Grid" the component with CSS grid layout is a
-  design failure when the visible guide treatment is accidental or scoped too
-  broadly. If the user asked for Vercel.com-like grid art, visible guides, or a
-  full-page Grid treatment, keep the visible guides only on the requested or
-  shown surface and refine them into real content cells. If not, remove grid
-  decoration behind ordinary hero copy, product cards, tables, credential
-  lists, or contact cells and keep functional rows, columns, borders, solid
-  backgrounds, and alignment.
+  design failure. CSS grid/flex layout, gutters, rows, columns, bordered cells,
+  and aligned responsive spans are good; visible grid backgrounds are not the
+  default Vercel look. If the user did not explicitly ask for visible grid
+  backgrounds/cell guides and did not provide a design showing them, remove
+  grid decoration behind ordinary hero copy, product cards, tables, credential
+  lists, contact cells, app shells, and page bodies while keeping functional
+  rows, columns, borders, solid backgrounds, and alignment.
 - Local heuristic: control overload where toolbars and sidebars expose many actions before the primary workflow is obvious; group or defer advanced controls and verify with interaction/content evidence.
 - Official-source check: low-contrast softness such as gray-on-gray text, subtle borders that disappear, muted controls without visible affordance, or hierarchy that relies on opacity alone violates Colors, Design, or Accessibility evidence.
 - Official-source check: inconsistent primitives such as one-off colors, radii, typography classes, shadows, button sizes, focus rings, or state styles fail when they bypass consulted Geist foundations/components.
@@ -44,12 +42,12 @@ Failure handling:
 
 - If a design starts to look like a generic AI startup template, stop and simplify: remove decorative background effects that are not user-approved brand moments, collapse competing CTAs without inventing replacement actions, reduce color to neutral plus semantic status, and put the real workflow in the first viewport.
 - If the design starts to look like accidental graph paper, blueprint UI, or a
-  canvas editor, stop and identify the exact intended visible-grid surface. If
-  the user requested Vercel.com-like grid art or visible cell guides, refine
-  the lines only on that surface into an intentional Geist/Grid-style treatment
-  with real content cells. If the rest of the page does not explicitly need
-  visible guides, remove those backgrounds, preserve the functional layout, and
-  use normal cells, tables, lists, panels, spacing, solid surfaces, and borders.
+  canvas editor, remove the grid background unless the user explicitly requested
+  visible grid art/backgrounds/cell guides or supplied a design showing them.
+  Preserve the functional grid layout and use normal cells, tables, lists,
+  panels, spacing, solid surfaces, and borders. When visible guides are
+  explicitly required, refine them only on that requested surface into an
+  intentional Geist/Grid-style treatment with real content cells.
 - If the result depends on fake data to look complete, do not ship it. Wire real data, show an honest empty state, or ask the user for real content.
 - If the existing project has a different visual system and the user has not made it the final visual authority, migrate or adapt the whole touched app or requested surface to Geist through shared tokens and primitives. State a blocker only when an explicit non-Geist authority or hard scope constraint makes coherent whole-surface Geist migration impossible.
 - If the user asks for "more creative" without explicitly overriding Geist, increase polish through alignment, density, copy, state coverage, and interaction clarity, not through gradients, ornamental assets, or random colors.

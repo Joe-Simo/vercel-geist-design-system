@@ -175,18 +175,19 @@ state-driven. Typography and spacing should carry hierarchy; color should be
 functional; borders should structure the UI; motion should be subtle and tied
 to state.
 
-Use functional CSS grid/flex layout as the baseline for ordinary columns,
-lists, cards, and app shells. A Vercel.com-like reference can mix hero-only
-visible guide art with ordinary bordered content grids; do not infer a
-page-wide repeating-gradient background from the words grid layout, grid
-design, or Vercel-style grid. Add visible guide-line/grid-art backgrounds only
-to the exact surface the user, reference, or supplied design clearly shows as
-visible grid art. For the rest of the page, use solid backgrounds, functional
-CSS grid/flex, borders, dividers, spacing, and aligned cells. Build a full-page
-visible Geist/Grid cell-and-guide treatment only when the user explicitly asks
-for full-page visible grid art or the supplied design clearly shows visible
-guides across the whole page. Do not add accidental graph-paper, blueprint, or
-repeating-gradient decoration behind unrelated UI.
+Use a grid system by default, not a grid background: CSS grid/flex, columns,
+rows, gutters, aligned cards, bordered cells, tables, dividers, spacing, and
+stable responsive spans are normal Geist layout. Solid page and component
+backgrounds are the default. Do not add decorative visible grid backgrounds,
+graph-paper lines, blueprint lines, or page-wide repeating gradients from the
+words grid layout, dashboard grid, feature grid, Vercel-style grid, or from an
+agent-selected Vercel reference. Add visible guide/cell/grid background art only
+when the user explicitly asks for visible grid art/backgrounds/cell guides, a
+user-supplied design clearly shows them, or the requested UI surface is the
+official Geist Grid component. Scope that art to the requested surface and make
+it a real content grid with aligned cells; never place it behind unrelated hero
+copy, product cards, tables, credentials, contact cells, app shells, or page
+bodies. Full-page visible grid backgrounds require an explicit full-page request.
 
 Skills.sh companions are routing helpers only. They never replace official
 Geist docs, never define Geist visuals, and never satisfy `Docs Evidence`.

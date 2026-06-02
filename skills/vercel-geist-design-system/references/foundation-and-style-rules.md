@@ -54,17 +54,19 @@ visible guide art onto product surfaces where they do not fit.
 - Cards are for repeated items, modals, individual panels, and genuine framed tools. Do not nest cards inside cards.
 - Use a predictable grid and stable dimensions for toolbars, boards, tables, counters, and repeated tiles.
 - Treat "grid" as layout first for ordinary responsive UI: use CSS grid/flex,
-  columns, rows, borders, and spacing to organize content. When the user asks
-  for a Vercel.com-like grid or visible Grid art, first identify the exact
-  surface that should visibly show guide lines. Vercel.com references often use
-  visible grid art in a hero or isolated feature surface while the rest of the
-  page remains a solid, bordered content grid. Do not turn a full page into a
-  repeating-gradient background unless the user explicitly asks for full-page
-  visible grid art or the supplied design clearly shows visible guides across
-  the whole page. Visible grid treatments should be content surfaces with real
-  cells, aligned borders, clipping/solid cells where useful, and responsive
-  row/column behavior. Do not add accidental graph-paper, blueprint, or
-  repeating-gradient decoration behind unrelated UI.
+  columns, rows, gutters, borders, cells, spacing, and stable responsive spans
+  to organize content. This is encouraged. Treat decorative visible grid
+  backgrounds as opt-in only: do not add graph-paper lines, blueprint lines,
+  guide lines behind copy, or repeating-gradient backgrounds because the task
+  says grid layout, dashboard grid, feature grid, Vercel style, or because the
+  agent picked a Vercel reference that contains grid art. Add visible
+  guide/cell/grid background art only when the user explicitly asks for it, a
+  user-supplied design clearly shows it, or the requested surface is the
+  official Geist Grid component. Scope it to that surface, make it a real
+  content grid with aligned cells, and keep page bodies, app shells, ordinary
+  panels, cards, tables, lists, credential sections, and contact cells on solid
+  backgrounds. Full-page visible grid backgrounds require an explicit full-page
+  request.
 - Local implementation heuristic, not `Docs Evidence`: when the project lacks an official spacing token source, use a restrained 4px-compatible rhythm such as 8, 12, 16, 20, 24, 32, 48, and 64 to preserve compact Geist composition. If official or project Geist-mapped spacing tokens exist, use those instead.
 - Keep page gutters responsive: about 16px on mobile, 24px on tablet, 32px on desktop, with a sensible max-width for reading surfaces.
 - Do not let hover, loading, selected, or error states resize components or shift layout.
@@ -165,7 +167,7 @@ For any task that creates or materially changes rendered UI, create or verify th
 - Typography: define or map the official `text-heading-*`, `text-button-*`, `text-label-*`, and `text-copy-*` classes. New components and screens must use these classes or mapped equivalents; raw `text-sm`, `font-bold`, arbitrary line-height, and arbitrary tracking are allowed only inside shared token/utility definitions or inside third-party/generated code that cannot consume project utilities. The final response must name the file, constraint, and why a mapped utility was impossible.
 - Colors: define semantic tokens for `background`, `foreground`, `muted-foreground`, `border`, `ring`, `accent`, `link`, `info`, `destructive`, `success`, and `warning`, mapped to Background 1/2, component backgrounds 1-3, borders 4-6, high-contrast backgrounds 7-8, and text/icons 9-10. Components should consume semantic tokens, not hard-coded grays.
 - Materials: define or map `material-base`, `material-small`, `material-medium`, `material-large`, `material-tooltip`, `material-menu`, `material-modal`, and `material-fullscreen` when the project does not already have them. Also define radius tokens/utilities for 6px, 12px, and 16px, and require screen files to consume those tokens rather than one-off `rounded-*` classes.
-- Primitives: create or adapt shared primitives for Button/IconButton, Input/Textarea, Select/Combobox when needed, Checkbox/Radio/Switch, Tabs, Modal/Sheet/Drawer, Menu/Tooltip, Toast/Feedback, Table/List, Empty/Error/Loading/Skeleton states, Surface/Material, and AppShell before composing multiple screens. App shells, panels, and surfaces use CSS grid/flex plus Geist tokens/materials by default; consult Geist Grid when the user asks for Vercel.com-like visible guide/cell layout, a supplied design clearly includes it, or the Grid component itself is the intended UI surface. Scope visible guide backgrounds to that exact surface; do not apply them to ordinary panels, page bodies, or unrelated content grids. Panels/surfaces still inherit Context Card, Relative Time Card, Project Banner, Entity, Description, or Table Best Practices as applicable to the content.
+- Primitives: create or adapt shared primitives for Button/IconButton, Input/Textarea, Select/Combobox when needed, Checkbox/Radio/Switch, Tabs, Modal/Sheet/Drawer, Menu/Tooltip, Toast/Feedback, Table/List, Empty/Error/Loading/Skeleton states, Surface/Material, and AppShell before composing multiple screens. App shells, panels, and surfaces use CSS grid/flex plus Geist tokens/materials by default. Consult Geist Grid only when the user explicitly asks for visible guide/cell layout, a user-supplied design clearly includes it, or the Grid component itself is the intended UI surface. Scope visible guide backgrounds to that exact surface; do not apply them to ordinary panels, page bodies, app shells, or unrelated content grids. Panels/surfaces still inherit Context Card, Relative Time Card, Project Banner, Entity, Description, or Table Best Practices as applicable to the content.
 - Borders and focus: define one shared focus-visible utility/variant using the project semantic `ring` token mapped to a specific consulted Geist color role/scale, then verify the focus behavior separately through the Vercel Web Interface Guidelines accessibility checks. Wire that utility into every interactive primitive and prohibit screen-local outline, box-shadow, or ring definitions.
 - App shell: use Geist foundations and Vercel Web Interface Guidelines for root background, content gutters, header/sidebar/navigation structure when needed, restrained dividers, predictable max-width behavior, mobile behavior, one obvious primary action zone per view, skip-to-content, valid heading hierarchy, and context-specific `<title>`.
 - State system: provide consistent hover, active/pressed, selected/current, disabled, loading, empty, error, validation, focus-visible, and reduced-motion states across the app.
