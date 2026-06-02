@@ -14,17 +14,18 @@ For each changed component, record:
 Common components/patterns to verify against current Apple HIG pages:
 
 - Actions and commands: Buttons, menus, menus/actions, context menus, toolbars,
-  keyboard shortcuts, gestures, drag/drop, game controllers.
-- Navigation and structure: Navigation bars, tab bars, sidebars, toolbars,
-  split views/windows, lists/tables, collections, search.
+  keyboard shortcuts, gestures, drag/drop, game controls.
+- Navigation and structure: Toolbars, tab bars, sidebars, split views,
+  lists/tables, collections, search, and Windows where the task involves
+  window presentation or management.
 - Forms and selection: Text fields, search fields, pickers, sliders, toggles,
   steppers, segmented controls, entering data, selection/input.
 - Modality and feedback: Alerts, sheets, popovers/panels where supported,
   modality, feedback, loading, empty/error/recovery states, status, progress
   indicators, gauges, rating indicators, ratings/reviews, and activity rings.
-- Content/data/technologies: Charts, maps, media controls, widgets, Live
-  Activities, App Clips, Apple Pay, Sign in with Apple, complications, images,
-  image views, App Shortcuts, Live Photos, and notifications.
+- Content/data/technologies: Charts, image views, web views, media patterns,
+  widgets, Live Activities, App Shortcuts, complications, notifications, maps,
+  App Clips, Apple Pay, Sign in with Apple, and Live Photos.
 - Iconography/assets: App icons, document icons where relevant, custom icons,
   SF Symbols, Apple Design Resources.
 
@@ -103,10 +104,10 @@ Use these aliases to find the official Apple starting point:
 
 - Dialog/confirm/alert dialog -> Alerts, Sheets, or Modality depending on
   severity, platform, and dismissal behavior.
-- Drawer/panel/bottom sheet -> Sheets, Sidebars, Toolbars, Modality, or Windows
-  depending on platform and task.
-- Navbar/header -> Navigation Bars or Toolbars; for macOS also check menu bar,
-  sidebars, and window toolbar expectations.
+- Drawer/panel/bottom sheet -> Sheets, Sidebars, Toolbars, Modality, or the
+  Windows Presentation component depending on platform and task.
+- Navbar/header -> Toolbars; for macOS also check menu bar, sidebars, and window
+  toolbar expectations.
 - Tabs/segmented views -> Tab Bars for top-level app sections where appropriate;
   Segmented Controls for same-surface choices; Sidebars or split views for
   larger adaptive structures.

@@ -68,25 +68,13 @@ Performance requirements:
   simulation when possible: CPU throttle, network throttle for media-heavy
   routes, long-task notes, frame pacing, memory/GPU risk, and fallback trigger.
 
-Accessibility requirements:
+Accessibility routing:
 
-- WCAG 2.2 AA fundamentals are the default accessibility target unless the
-  project has a stricter requirement.
-- Semantic DOM and logical heading order remain mandatory.
-- Keyboard users must complete the primary flow.
-- Focus-visible states must be clear on custom controls, overlays, menus,
-  sliders, galleries, and spatial navigation.
-- Text, captions, controls, and overlays need readable contrast over media.
-- Interactive targets must be reachable and large enough on mobile.
-- Announce loading/error/complete states when they affect task completion.
-- Keep decorative canvas/SVG/media hidden from assistive tech.
-- Use accessible names, roles, values, and labels for icon-only and custom
-  controls.
-- Run an automated accessibility check when tooling exists, then manually check
-  keyboard order, focus visibility, zoom to 200%, forced colors/high contrast
-  where supported, reduced motion, labels/names/roles, captions/transcripts,
-  and screen-reader sanity for the primary flow. Automated checks do not replace
-  manual interaction checks.
+- Load `accessibility-and-inclusive-experience.md` for the full accessibility
+  gate. This file only adds performance-adjacent reminders: do not bury real
+  content in canvas/media, keep primary flows keyboard-reachable, preserve
+  readable contrast over media, and verify reduced-motion/performance fallbacks
+  together for heavy animation, WebGL, canvas, or video.
 
 SEO and metadata:
 

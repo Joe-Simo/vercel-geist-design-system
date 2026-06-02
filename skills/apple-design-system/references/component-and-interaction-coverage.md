@@ -23,8 +23,8 @@ For every applied item, record:
 - macOS work must consider menu bar commands, keyboard shortcuts, resizable
   windows, sidebars, inspectors, and window toolbar behavior.
 
-Official pages: Navigation and search, Navigation Bars, Tab Bars, Tab Views,
-Sidebars, Split Views, Toolbars, Windows, The Menu Bar, Keyboards.
+Official pages: Navigation and search, Toolbars, Tab Bars, Tab Views, Sidebars,
+Split Views, Presentation, Windows, The Menu Bar, Keyboards.
 
 ## Menus And Commands
 
@@ -118,8 +118,10 @@ Controls, Labels, Accessibility.
   screenshot only.
 
 Official pages: Gestures, Drag and Drop, Pointing Devices, Focus and Selection,
-Keyboards, Game Controllers, Digital Crown, Designing for tvOS, Designing for
-watchOS, Designing for visionOS, Spatial Layout.
+Keyboards, Action Button, Apple Pencil and Scribble, Camera Control, Eyes,
+Gyroscope and accelerometer, Nearby interactions, Remotes, Game controls,
+Digital Crown, Designing for tvOS, Designing for watchOS, Designing for
+visionOS, Spatial Layout.
 
 ## Haptics, Audio, And Feedback
 
@@ -142,11 +144,13 @@ Accessibility, Designing for visionOS.
 - Use rating indicators and ratings/reviews only when the product genuinely
   collects, displays, or links to review information. App Store-facing review
   flows require current App Store and HIG evidence.
-- Complications, activity rings, Live Activities, and notifications are
-  platform surfaces, not decorative widgets; verify their exact official pages.
+- Complications, activity rings, App Shortcuts, Live Activities, notifications,
+  Top Shelf, watch faces, widgets, and status bars are platform surfaces, not
+  decorative widgets; verify their exact official pages.
 
 Official pages: Status, Progress Indicators, Gauges, Rating Indicators, Ratings
-and Reviews, Activity Rings, Complications, Live Activities, Notifications.
+and Reviews, Activity Rings, App Shortcuts, Complications, Live Activities,
+Notifications, Status Bars, Top Shelf, Watch Faces, Widgets.
 
 ## Per-Component Claim Rule
 

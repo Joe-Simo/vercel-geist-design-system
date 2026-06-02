@@ -47,13 +47,21 @@ the decision.
 
 Required pages by decision type:
 
-- Foundations: HIG root, Typography, Color, Layout, Materials, SF Symbols, App
-  Icons, Motion, Writing, and Accessibility as applicable.
+- Index sweep: for broad Apple/HIG/Apple-quality claims, open the current HIG
+  Getting Started, Foundations, Patterns, Components, Inputs, and Technologies
+  indexes, then map every applicable live index item to the task. A local map
+  cannot prove that current HIG coverage is complete.
+- Foundations: HIG root plus every applied current foundation page, including
+  Typography, Color, Layout, Materials/Liquid Glass, Dark Mode, Icons, SF
+  Symbols, App Icons, Images, Motion, Writing, Branding, Right to left,
+  Inclusion/Accessibility, and Privacy as applicable.
 - Platform: the official target platform page, such as iOS, iPadOS, macOS,
   watchOS, tvOS, or visionOS.
-- Components/patterns: every concrete matching component or pattern URL from
-  `official-reference-map.md`, such as Buttons, Tab Bars, Sidebars, Sheets,
-  Alerts, Text Fields, Search Fields, Lists and Tables, or Modality.
+- Components/patterns/inputs/technologies: every concrete matching current URL
+  from `official-reference-map.md` or the live HIG indexes, such as Buttons, Tab
+  Bars, Sidebars, Sheets, Alerts, Text Fields, Search Fields, Lists and Tables,
+  Modality, Action Button, Camera Control, Remotes, Web Views, Watch Faces, ID
+  Verifier, or Tap to Pay on iPhone.
 - Assets/licensing: Apple Design Resources, Apple Fonts, SF Symbols, developer
   terms, and any technology-specific page for Apple Pay, Sign in with Apple,
   Wallet, product bezels, badges, logos, or marks.

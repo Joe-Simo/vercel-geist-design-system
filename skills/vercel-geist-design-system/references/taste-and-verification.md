@@ -65,12 +65,29 @@ Required audit loop when the app/code can be exercised; capture screenshots when
 3. If the app runs, attempt Browser or Playwright mobile, laptop, desktop, and ultra-wide screenshots for each inventory row. Include the first viewport and any changed states such as menus, dialogs, empty states, loading states, errors, or dense data views. Record the command, URL, viewport sizes, screenshot paths, and state. Valid screenshot blockers are limited to app cannot build/run, missing auth or environment values, browser/screenshot tool unavailable after a named attempt, or route unreachable after the discovery source was checked. If screenshots are possible and not captured, do not claim the Vercel Taste Gate passed.
 4. Run an interaction audit for every changed flow using an applicability matrix: `check | pass/fail/N/A | reason/evidence`. Cover keyboard-only operation, visible `:focus-visible`/`:focus-within`, overlay initial/trapped/restored focus, Escape/Enter/Cmd/Ctrl+Enter behavior, label activation, desktop >=24px and mobile >=44px targets, URL state plus Back/Forward/refresh/scroll restoration, optimistic update rollback/Undo, tooltip timing, intentional `overscroll-behavior`, clean drag behavior, locale-aware shortcuts, browser `theme-color`/`color-scheme`, and accessibility tree names/states/hidden decoration. Applicability triggers are mandatory: overlays require focus checks; mutations require optimistic/rollback or explicit non-applicability; tooltips require timing checks when present; filters, tabs, search, pagination, expanded panels, selected views, and any visible workflow state require URL-state checks; drag/reorder features require drag checks; icon-only controls require accessibility-tree verification. Conditional checks may be `N/A` only with a specific reason tied to absent UI/behavior. Revise failures before judging screenshots.
 5. Compare the rendered UI against Geist foundations and relevant Geist components from the official reference map.
-6. Deterministically check for the official Web Interface Guidelines review path. In Codex, use an installed repo command or slash command only if the current agent actually supports it and a concrete command, file, or documented invocation is present. Otherwise, if network access allows, fetch and use the raw command prompt from `https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md` for a manual audit. Record the exact command/file/path or raw URL used. Run the installer only with explicit user or project opt-in and record the reason. Skills.sh and raw GitHub prompts may only route or run an audit helper; they cannot supply design-system authority, cannot satisfy `Docs Evidence`, and cannot replace reading `https://vercel.com/design/guidelines` in the current turn. If none can be run, record the exact blocker and continue with the manual guidelines audit.
+6. Deterministically check for the official Web Interface Guidelines review path. In Codex, use an installed command, slash command, or accessible helper only if the current agent actually supports it and a concrete documented invocation is present. Otherwise, read `https://vercel.com/design/guidelines` directly and run the manual checklist below from the current official page. Record the exact command/helper/page/checklist used. Run installers only with explicit user or project opt-in and record the reason. Helper prompts may route or run an audit helper; they cannot supply design-system authority, cannot satisfy `Docs Evidence`, and cannot replace reading `https://vercel.com/design/guidelines` in the current turn. If no helper can be run, record the blocker and continue with the manual checklist.
 7. Identify every place where the UI fails the evidence-backed pass criteria or trips local generic-SaaS heuristics.
 8. Revise the implementation, then inspect fresh screenshots and rerun the interaction audit.
 9. Repeat until the screenshots and interaction audit pass every rule below.
 
 Pass criteria:
+
+Manual Web Interface Guidelines checklist when no helper can run:
+
+`guideline area | official page section | exact quote/paraphrased evidence | affected surface | check performed | pass/fail/N/A | revision`
+
+- Accessibility and keyboard: focus visibility, focus order, labels, target size,
+  mobile input size, browser zoom, accessibility-tree names, and hidden
+  decoration.
+- State and navigation: URL-persisted workflow state, Back/Forward/refresh
+  restoration, scroll restoration, optimistic mutation behavior, error recovery,
+  and no dead-end screens.
+- Interaction details: tooltip timing, modal/drawer scroll containment,
+  drag/reorder behavior, shortcut localization, label activation, and tap
+  behavior.
+- Browser and visual details: theme-color/color-scheme, shadows, borders,
+  nested radii, non-neutral backgrounds, text transforms, charts, masks, fades,
+  and browser chrome.
 
 - Route/surface/state inventory is complete for the verified scope, with discovery source plus mobile, laptop, desktop, and ultra-wide screenshot evidence or valid recorded blockers for every row.
 - The chosen Vercel/Geist reference archetype matches the requested surface; homepage-specific composition is used only for homepage, hero, launch, or broad marketing work, and product/docs/dashboard/form/table surfaces are checked against comparable Geist components or Vercel surfaces when available.

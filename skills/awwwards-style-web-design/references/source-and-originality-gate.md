@@ -2,12 +2,14 @@
 
 This skill is based on independently written, high-level synthesis of public
 experiential web-design patterns and public design-award evaluation concepts.
-It does not bundle or require third-party content. Do not open, mine, copy,
-summarize, embed, or redistribute third-party screenshots, page text, source
-code, assets, profile metadata, voting data, or scraped/archive material. Use
-only official public facts for factual claims and user-provided, rights-cleared
-assets for implementation. Live facts, award status, legal terms, and current
-references must be verified against official sources when they matter.
+It does not bundle or require third-party content. You may inspect public
+benchmark sites only for brief, high-level calibration of abstract craft
+principles. Do not mine, copy, closely paraphrase, embed, scrape, summarize in
+detail, or redistribute third-party screenshots, page text, source code, assets,
+profile metadata, voting data, or archive material. Use only official public
+facts for factual claims and user-provided, rights-cleared assets for
+implementation. Live facts, award status, legal terms, and current references
+must be verified against official sources when they matter.
 
 Required stance:
 
@@ -25,9 +27,10 @@ Benchmark calibration gate:
   identity.
 - Prefer official/live sources when current award status, winner names, or legal
   terms matter.
-- For each benchmark, extract abstract principles: concept clarity,
-  first-viewport impact, interaction quality, motion restraint, content
-  specificity, responsive craft, and technical polish.
+- For each benchmark, extract only abstract principles: concept clarity,
+  first-viewport impact, interaction category, motion discipline, content
+  specificity, responsive craft, and technical polish. Do not capture exact
+  layouts, copy, frame sequences, asset treatments, or distinctive art direction.
 - Compare the planned work against the benchmarks by dimension, then name the
   weakest dimension before implementation.
 - If the direction looks recognizable as any benchmark, stop and redesign the

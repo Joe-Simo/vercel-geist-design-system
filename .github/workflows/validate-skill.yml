@@ -3,13 +3,186 @@ name: Validate Skill
 on:
   push:
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+
+      - name: Checkout base validation tools
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: .validation-tools
+          persist-credentials: false
+
+      - name: Install locked validation tools
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            if [ ! -f .validation-tools/package-lock.json ]; then
+              expected_package_json="864506e8d318ccafdb3adeac810cbe93932446ee5b813396a86e01c2baf8f332"
+              expected_package_lock="569675103fa82ea7dac50541dc33640b626d78903f5c9dee1fb1616f6e606f6d"
+              actual_package_json="$(shasum -a 256 package.json | awk '{print $1}')"
+              actual_package_lock="$(shasum -a 256 package-lock.json | awk '{print $1}')"
+              if [ "$actual_package_json" != "$expected_package_json" ] || [ "$actual_package_lock" != "$expected_package_lock" ]; then
+                echo "Base branch has no validation lockfile and PR package lock does not match the bootstrap hash."
+                exit 1
+              fi
+              cp package.json package-lock.json .validation-tools/
+            fi
+            npm ci --prefix .validation-tools --ignore-scripts --no-audit --no-fund
+          else
+            npm ci --ignore-scripts --no-audit --no-fund
+          fi
 
       - name: Validate skills.sh discovery
-        run: npx --yes skills add . --list
+        run: |
+          set -euo pipefail
+          tools_dir="$PWD"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            tools_dir="$PWD/.validation-tools"
+          fi
+          "$tools_dir/node_modules/.bin/skills" add . --list
+
+      - name: Validate skill schemas
+        run: |
+          set -euo pipefail
+          tools_dir="$PWD"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            tools_dir="$PWD/.validation-tools"
+          fi
+          for skill in skills/*; do
+            "$tools_dir/node_modules/.bin/skills-ref" validate "$skill"
+          done
+
+      - name: Check internal reference paths
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import pathlib, re, sys
+
+          failed = False
+          for skill_dir in pathlib.Path("skills").iterdir():
+              if not skill_dir.is_dir():
+                  continue
+              files = [skill_dir / "SKILL.md"]
+              ref_dir = skill_dir / "references"
+              if ref_dir.exists():
+                  files.extend(sorted(ref_dir.glob("*.md")))
+              for file in files:
+                  if not file.exists():
+                      continue
+                  text = file.read_text(encoding="utf-8")
+                  candidates = set(re.findall(r"`([^`]+\.md)`", text))
+                  candidates.update(re.findall(r"\]\(([^)\s]+\.md)\)", text))
+                  for raw in candidates:
+                      ref = raw.split("#", 1)[0]
+                      if "://" in ref or ref.startswith("#"):
+                          continue
+                      if ref.startswith("references/"):
+                          target = skill_dir / ref
+                      else:
+                          target = file.parent / ref
+                      if not target.exists():
+                          print(f"Missing reference from {file}: {raw}")
+                          failed = True
+          if failed:
+              sys.exit(1)
+          PY
+
+      - name: Check public links
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          import pathlib, re, subprocess, sys, urllib.parse
+
+          allowed = {
+              "developer.apple.com": ("/app-store/", "/apple-pay/", "/design/", "/documentation/", "/fonts/", "/icon-composer/", "/sf-symbols/", "/support/", "/wallet/"),
+              "www.apple.com": ("/legal/",),
+              "vercel.com": ("/design/", "/font", "/geist/"),
+              "www.awwwards.com": ("/about-evaluation/", "/about-status/", "/developer-award/", "/mobile-excellence-guidelines.pdf", "/privacy-policy/", "/terms/", "/websites/sites_of_the_year/"),
+              "skills.sh": ("/b/joe-simo/skills", "/joe-simo/skills", "/joe-simo/skills/"),
+              "www.skills.sh": ("/b/joe-simo/skills", "/joe-simo/skills", "/joe-simo/skills/", "/vercel/", "/vercel-labs/"),
+              "joesimo.com": ("", "/"),
+          }
+          url_re = re.compile(r"https?://[^\s\]\)>\"`]+|www\.[^\s\]\)>\"`]+")
+
+          def normalize(url):
+              return (url if not url.startswith("www.") else "https://" + url).rstrip(".,;:")
+
+          def allowed_url(url):
+              parsed = urllib.parse.urlparse(url)
+              if parsed.scheme != "https":
+                  return False
+              prefixes = allowed.get(parsed.netloc)
+              if not prefixes:
+                  return False
+              for prefix in prefixes:
+                  if prefix.endswith("/"):
+                      if parsed.path == prefix.rstrip("/") or parsed.path.startswith(prefix):
+                          return True
+                  elif parsed.path == prefix:
+                      return True
+              return False
+
+          def resolve_location(current_url, location):
+              return urllib.parse.urljoin(current_url, location.strip())
+
+          urls = set()
+          for root in ["README.md", "skills", "skills.sh.json"]:
+              path = pathlib.Path(root)
+              files = [path] if path.is_file() else list(path.rglob("*"))
+              for file in files:
+                  if file.is_file():
+                      urls.update(normalize(url) for url in url_re.findall(file.read_text(encoding="utf-8", errors="ignore")))
+          if len(urls) > 400:
+              print(f"Too many public links: {len(urls)}")
+              sys.exit(1)
+
+          def check(url):
+              if not allowed_url(url):
+                  return f"Unapproved link target: {url}"
+              current = url
+              for _ in range(8):
+                  proc = subprocess.run(["curl", "-I", "-s", "--max-time", "20", current], text=True, capture_output=True)
+                  if proc.returncode != 0:
+                      return f"curl exit {proc.returncode}: {current}"
+                  lines = proc.stdout.splitlines()
+                  status = next((line for line in lines if line.startswith("HTTP/")), "")
+                  parts = status.split()
+                  code = parts[1] if len(parts) > 1 else ""
+                  if code.startswith("2"):
+                      return None
+                  if code.startswith("3"):
+                      location = next((line.split(":", 1)[1].strip() for line in lines if line.lower().startswith("location:")), "")
+                      if not location:
+                          return f"{code} without Location {current}"
+                      target = resolve_location(current, location)
+                      if not allowed_url(target):
+                          return f"Unapproved redirect target: {current} -> {target}"
+                      current = target
+                      continue
+                  return f"{code} {current}"
+              return f"Too many redirects: {url}"
+
+          failures = []
+          with ThreadPoolExecutor(max_workers=16) as executor:
+              for future in as_completed(executor.submit(check, url) for url in sorted(urls)):
+                  failure = future.result()
+                  if failure:
+                      failures.append(failure)
+          if failures:
+              print("\n".join(failures))
+              sys.exit(1)
+          PY

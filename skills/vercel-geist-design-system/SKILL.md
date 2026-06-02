@@ -47,9 +47,13 @@ reference because this summary seems sufficient.
   redesigning, reviewing, or materially changing rendered UI.
 - Load `references/official-reference-map.md` when mapping foundations,
   brand/assets, or components to official Vercel URLs.
-- Load `references/component-system.md` before certification/trust credential
-  displays, components/primitives/states, custom compositions, UI copy,
-  performance-relevant UI, icon/brand, motion, or Web Interface Guidelines
+- Load `references/component-system.md` before components, primitives, component
+  states, custom compositions, or component-page mapping.
+- Load `references/trust-brand-and-asset-rules.md` before certification/trust
+  credential displays, official marks, iconography, logos, badges, or brand
+  asset work.
+- Load `references/motion-performance-copy-rules.md` before UI copy,
+  performance-relevant UI, motion/interaction, or Web Interface Guidelines
   overlay work.
 - Load `references/companion-routing.md` only when another Skills.sh entry,
   framework helper, verification helper, tool, or conditional surface could be

@@ -1,16 +1,17 @@
 ## Foundation Gate
 
-For any task that creates or materially changes rendered UI, complete the Geist foundation layer before screen design or screen implementation. For tiny primitive-only fixes, verify the touched primitive still composes these foundations. Do not design or implement individual screens until these foundations are present, wired through the real app entrypoints, and used by shared primitives.
+For any task that creates or materially changes rendered UI, complete the Geist
+foundation layer before screen design or screen implementation. For tiny
+primitive-only fixes, verify the touched primitive still composes the same
+foundation. Do not design or implement individual screens until the relevant
+foundation inventory is present, wired through the real app entrypoints, and used
+by shared primitives.
 
-- Fonts: install or use the host project's Geist asset setup. In Next.js, prefer the `geist` package and wire Geist Sans and Geist Mono variables in the root layout. Add Geist Pixel variables from `geist/font/pixel` only when a constrained display/brand accent is actually used. Apply Sans to the app root, reserve Mono for code, command text, shortcuts, technical identifiers, versions, environment variables, commit hashes, terminal/log output, and official mono classes, and keep Pixel out of ordinary product UI text. Numeric product data should use Sans label/copy utilities with tabular numeric treatment unless the consulted Typography page or existing Geist-mapped primitive maps that context to Mono.
-- Tokens: define a single semantic token layer for backgrounds, foregrounds, muted text, borders, rings, destructive, success, warning, link, and info states. Optional accent aliases must resolve to a specific official Geist role or scale for focus, selection, link, or status. Map these tokens to Geist Background 1/2, component backgrounds 1-3, borders 4-6, high-contrast backgrounds 7-8, and text/icons 9-10.
-- Typography: define or map reusable Geist typography utilities before writing screen copy styles: `text-heading-*`, `text-button-*`, `text-label-*`, `text-copy-*`, mono variants, and tabular numeric treatment. Screen files should not rely on ad hoc `text-sm`, `font-bold`, arbitrary line heights, or arbitrary tracking for primary hierarchy.
-- Materials and radii: define shared material utilities or variants for `material-base`, `material-small`, `material-medium`, `material-large`, `material-tooltip`, `material-menu`, `material-modal`, and `material-fullscreen`. Define radius tokens/utilities for the Geist scale: 6px, 12px, and 16px. Do not use arbitrary large radii or one-off `rounded-*` choices in screen files.
-- Focus rings: define one app-wide focus-visible treatment using the project semantic `ring` token mapped to a specific consulted Geist color role/scale. Treat the focus-ring behavior as an accessibility implementation rule verified separately through the Vercel Web Interface Guidelines, not as a Geist foundation token or source-of-truth rule. All interactive primitives must consume that treatment instead of inventing per-component outline, box-shadow, or ring styles.
-- App shell: create or verify a shared app shell before screen work: root background, content gutters, navigation/header/sidebar structure when needed, dividers, max-width behavior, mobile behavior, and one clear primary action zone per view.
-- Component primitives: create or verify the shared primitives needed by the work before composing screens. At minimum, route new UI through Geist-styled primitives for Button/IconButton, Input/Textarea, Select/Combobox when needed, Checkbox/Radio/Switch, Tabs, Modal/Sheet/Drawer, Menu/Tooltip, Toast/Feedback, Table/List, Empty/Error/Loading/Skeleton states, Surface/Material, and AppShell. Composition primitives are not official Geist components: IconButton must follow Button icon-only/svg-only guidance; List must map to Table, Entity, Description, Scroller, or Show More; Surface/Panel/AppShell must be built from Grid, Material, Menu/Tabs/Drawer/Sheet as applicable and pass the custom-pattern gate.
-- State system: create or verify shared state variants/primitives before screen work for hover, active/pressed, selected/current, disabled, loading, empty, error, validation, focus-visible, and reduced-motion behavior. Screen files must consume these shared state APIs/classes instead of defining state styles locally.
-- Screen composition rule: screens must compose the shared Geist tokens, typography, materials, focus rings, app shell, primitives, and state system. Do not create one-off screen-local visual systems unless the existing project architecture explicitly requires that location for the shared implementation.
+Record pass/fail status for: official docs opened, fonts, semantic tokens,
+typography utilities, materials/radii, focus rings, app shell, component
+primitives, state system, and screen composition. The implementation details for
+that inventory live in the dedicated sections below, especially `App-Wide Setup`;
+do not duplicate them in screen files or bypass them with local styles.
 
 ## Geist Essence
 

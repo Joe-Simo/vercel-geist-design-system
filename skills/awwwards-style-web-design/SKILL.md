@@ -4,19 +4,17 @@ description: >-
   Independent community skill for designing, redesigning, reviewing, and
   polishing original Awwwards-style, award-caliber experiential websites:
   immersive portfolios, agency sites, editorial microsites, campaign pages,
-  cinematic product launches, scroll narratives, WebGL/Three.js/R3F scenes,
-  GSAP/Motion-style interactions, tactile transitions, typography, composition,
-  art direction, audio/video/media, responsive craft, accessibility,
-  performance, and UI polish. Trigger for high-craft, immersive, cinematic,
-  experimental, editorial, interactive, portfolio, luxury, culture, fashion,
-  music, launch, storytelling, Awwwards, Site of the Day, Site of the Year,
-  award-caliber, award-caliber experiential, experiential web design, or
-  design-award-caliber web design.
-  Skip ordinary SaaS dashboards, admin tools, docs, CRUD apps, and backend-only
-  work unless the user explicitly asks for an experiential treatment.
-  Independent community guidance; not affiliated with, endorsed by, sponsored
-  by, or authorized by Awwwards, and not permission to clone winning or
-  nominated sites.
+  cinematic launches, scroll narratives, WebGL/Three.js/R3F scenes, GSAP/Motion
+  interactions, tactile transitions, typography, art direction, media,
+  accessibility, performance, and UI polish. Trigger for explicit Awwwards, Site
+  of the Day, Site of the Year, award-caliber, experiential, immersive,
+  cinematic, experimental, motion-led, WebGL-heavy web design, or portfolio,
+  agency, luxury, fashion, music, campaign, launch, editorial, interactive,
+  storytelling, or narrative work paired with high-craft/experiential intent.
+  Skip ordinary SaaS, admin, docs, CRUD, backend-only, and ordinary
+  portfolio/campaign/launch work unless experiential treatment is requested.
+  Community guidance; not affiliated with Awwwards and not permission to clone
+  winners or nominees.
 metadata:
   author:
     github: joe-simo
@@ -48,23 +46,28 @@ Load only task-relevant references, but do not skip required gates:
 
 | Task mode | Required references |
 |---|---|
-| Concept/spec | `source-and-originality-gate.md`, `experiential-foundations.md`, `visual-and-layout-system.md`, `craft-pattern-library.md` |
-| Visual implementation | Concept refs plus `implementation-and-performance.md`, `accessibility-and-inclusive-experience.md` |
-| Motion/3D/media | Visual implementation refs plus `tool-and-stack-routing.md`, `motion-interaction-and-3d.md` |
-| Final verification | `award-readiness-and-verification.md`, `accessibility-and-inclusive-experience.md`, `source-and-originality-gate.md`, plus touched domain refs |
-| Simple critique | `source-and-originality-gate.md`, `visual-and-layout-system.md`; add `award-readiness-and-verification.md` for pass/fail readiness |
+| Concept/spec | `references/source-and-originality-gate.md`, `references/experiential-foundations.md`, `references/visual-and-layout-system.md`, `references/craft-pattern-library.md` |
+| Visual implementation | Concept refs plus `references/implementation-and-performance.md`, `references/accessibility-and-inclusive-experience.md` |
+| Motion/3D/media | Visual implementation refs plus `references/tool-and-stack-routing.md`, `references/motion-interaction-and-3d.md` |
+| Final verification | `references/award-readiness-and-verification.md`, `references/accessibility-and-inclusive-experience.md`, `references/source-and-originality-gate.md`, plus touched domain refs |
+| Simple critique | `references/source-and-originality-gate.md`, `references/visual-and-layout-system.md`; add `references/award-readiness-and-verification.md` for pass/fail readiness |
 
-Use `tool-and-stack-routing.md` before selecting or changing packages, advanced
-animation, 3D/WebGL/canvas, media, performance, or verification tooling.
+Use `references/tool-and-stack-routing.md` before selecting or changing
+packages, advanced animation, 3D/WebGL/canvas, media, performance, or
+verification tooling.
 
 ## Trigger Policy
 
-Trigger for rendered web UI when the user asks for Awwwards, Site of the Year,
-award-winning, award-caliber, experiential, immersive, cinematic, editorial,
-experimental, interactive, WebGL-heavy, motion-led, portfolio, agency, luxury,
-culture, music, fashion, campaign, launch, or narrative design. Skip ordinary
-product UI, dashboards, admin, docs, tables, forms, CRUD, backend-only, or
-behavior-only fixes unless the user asks for an experiential treatment.
+Trigger for rendered web UI when the user explicitly asks for Awwwards, Site of
+the Year, award-winning, award-caliber, experiential, immersive, cinematic,
+experimental, WebGL-heavy, or motion-led design. Also trigger when category
+terms such as portfolio, agency, luxury, culture, music, fashion, campaign,
+launch, editorial, interactive, storytelling, or narrative are paired with a
+clear high-craft, immersive, experimental, motion-led, WebGL-heavy,
+award-caliber, or experiential intent. Skip ordinary product UI, dashboards,
+admin, docs, tables, forms, CRUD, backend-only, behavior-only fixes, and ordinary
+portfolio/campaign/launch work unless the user asks for an experiential
+treatment.
 
 If another final visual system is explicit, that system owns the visual
 language. Preserve project-local product primitives and use this skill only for

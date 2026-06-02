@@ -8,7 +8,7 @@ Community Agent Skills by `joe-simo`.
 
 `apple-design-system` is a community Agent Skill for designing, redesigning, reviewing, and polishing Apple-style interfaces using official Apple Human Interface Guidelines and Apple Developer design resources only. It helps agents apply platform-native typography, semantic colors, layout, materials, Liquid Glass, SF Symbols, app icons, navigation, controls, component behavior, accessibility, motion, platform adaptation, responsive behavior, asset/licensing boundaries, screenshots, and UI polish across iOS, iPadOS, macOS, watchOS, tvOS, visionOS, SwiftUI/UIKit/AppKit-style UI, and Cupertino-style web UI.
 
-The skill treats official Apple Developer sources as the design authority: Human Interface Guidelines, Typography, Color, Layout, Materials, SF Symbols, App Icons, Motion, Writing, Accessibility, platform HIG pages, Apple Design Resources, Apple Fonts, and Apple developer terms. It does not use third-party summaries, UI kits, templates, copied Apple screenshots, extracted private assets, or unofficial HIG mirrors as design authority.
+The skill treats official Apple Developer sources as the design authority: current HIG index pages, applied foundation pages, platform pages, component/pattern/input/technology pages, Apple Design Resources, Apple Fonts, and Apple developer terms. Broad Apple-quality claims require a live index sweep so current pages such as Dark Mode, Privacy, Images, newer inputs, and branded technologies are not skipped. It does not use third-party summaries, UI kits, templates, copied Apple screenshots, extracted private assets, or unofficial HIG mirrors as design authority.
 
 The skill includes the same kind of enforcement structure as the Geist skill: a source-of-truth gate, official reference map, foundation gate, platform/pattern map, component documentation contract, component/interaction coverage map, asset/licensing gate, privacy/data-use gate, Apple interface craft checks, accessibility verification, and an Apple Taste Gate for screenshots, interaction checks, and final evidence.
 
@@ -18,7 +18,7 @@ This is community-authored by `joe-simo`. It is not an official Apple skill and 
 
 ## Awwwards-Style Web Design
 
-`awwwards-style-web-design` is a community Agent Skill for designing and reviewing original Awwwards-style, award-caliber experiential websites. It helps agents create high-craft portfolios, agency sites, editorial microsites, campaign pages, product launches, cinematic landing pages, scroll narratives, WebGL/Three.js/R3F scenes, GSAP/Motion-style interactions, tactile transitions, typography, composition, art direction, audio/video/media, responsive layouts, accessibility, performance, and UI polish.
+`awwwards-style-web-design` is a community Agent Skill for designing and reviewing original Awwwards-style, award-caliber experiential websites. It helps agents create high-craft portfolios, agency sites, editorial microsites, campaign pages, product launches, cinematic landing pages, scroll narratives, WebGL/Three.js/R3F scenes, GSAP/Motion-style interactions, tactile transitions, typography, composition, art direction, audio/video/media, responsive layouts, accessibility, performance, and UI polish. Ordinary portfolio, campaign, launch, luxury, fashion, music, or editorial work should only use it when the request also asks for high-craft, immersive, motion-led, WebGL-heavy, award-caliber, or experiential treatment.
 
 The skill is not a template and does not promise awards. When a user asks for a winning-level site, it interprets that as the strongest honest award-caliber candidate possible inside the project's constraints. It teaches agents to synthesize patterns from award-caliber web work into original concepts: benchmark calibration, multiple concept directions, creative-director selection, clear experience thesis, content-native interaction, bespoke art direction, motion discipline, real content, proper assets, reduced-motion fallbacks, official docs evidence, browser verification, measurable accessibility/performance checks, and production-grade implementation.
 
@@ -42,7 +42,7 @@ For existing products, the skill now includes a preservation gate: agents should
 
 For Vercel-style grids, the skill now separates ordinary layout from intentional Vercel/Grid-style cell-and-guide art. Agents should use CSS grid/flex, columns, rows, cells, spacing, and borders for normal responsive layout. A Vercel.com-like page may use visible guide art only in a hero or isolated feature surface while the rest of the page remains a solid bordered content grid. Agents should scope visible guide-line backgrounds to the exact surface requested or shown, and use a full-page visible Grid treatment only when the user explicitly asks for it or the supplied design clearly shows guides across the whole page. The skill rejects accidental graph-paper, blueprint, or repeating-gradient decoration that sits behind unrelated UI or spreads beyond the requested surface.
 
-The main `SKILL.md` stays compact for lower initial context use. Detailed source gates, component mappings, style rules, companion routing, and verification checks live in `skills/vercel-geist-design-system/references/` and are loaded only when relevant.
+The main `SKILL.md` stays compact for lower initial context use. Detailed source gates, component mappings, trust/brand/asset rules, motion/performance/copy rules, style rules, companion routing, and verification checks live in `skills/vercel-geist-design-system/references/` and are loaded only when relevant.
 
 The current companion routing covers:
 
@@ -55,14 +55,32 @@ The skill intentionally avoids routing Vercel platform/runtime skills for visual
 
 This is community-authored by `joe-simo`. It is not an official Vercel skill.
 
+## License
+
+MIT. See `LICENSE`.
+
 ## Install
 
 ```bash
-npx skills add joe-simo/skills
-npx skills add joe-simo/skills --skill apple-design-system
-npx skills add joe-simo/skills --skill awwwards-style-web-design
-npx skills add joe-simo/skills --skill vercel-geist-design-system
+npx skills@1.5.9 add joe-simo/skills
+npx skills@1.5.9 add joe-simo/skills --skill apple-design-system
+npx skills@1.5.9 add joe-simo/skills --skill awwwards-style-web-design
+npx skills@1.5.9 add joe-simo/skills --skill vercel-geist-design-system
 ```
+
+## Local Validation
+
+```bash
+npm ci --ignore-scripts --no-audit --no-fund
+npx --no-install skills add . --list
+for skill in skills/*; do npx --no-install skills-ref validate "$skill"; done
+git diff --check
+git diff --cached --check
+```
+
+Before publishing, also verify internal Markdown reference paths resolve from
+`SKILL.md` and `references/`, then run the trusted public-link sweep across
+`README.md`, `skills/`, and `skills.sh.json`.
 
 ## Example Prompts
 
